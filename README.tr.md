@@ -1,4 +1,4 @@
-*[English](README.md), [Turkish](README.tr.md)*
+*[English](README.md), [Türkçe](README.tr.md)*
 
 # Türkiye İdari Sınırları
 
@@ -44,13 +44,13 @@ Tüm katmanları bir arada görüntülemek için aşağıdaki sorgu çalıştır
 out geom;
 ```
 
-[Overpass Turbo](https://wiki.openstreetmap.org/wiki/ES:Overpass_turbo/GeoJSON) dökümanında belirtildiğine göre ham OSM verisini `geojson` formatına dönüştürmek için **osmtogeojson** adında bir kütüphane kullanılıyor. `geojsons` klasöründe bulunan veriler de bu araç kullanılarak üretilmiştir.
+[Overpass Turbo](https://wiki.openstreetmap.org/wiki/ES:Overpass_turbo/GeoJSON) dökümanında belirtildiğine göre ham OSM verisini `geojson` formatına dönüştürmek için **osmtogeojson** adında bir kütüphane kullanılmaktadır. `geojsons` klasöründe bulunan veriler de bu araç kullanılarak üretilmiştir.
 
 > Overpass turbo uses the [osmtogeojson](https://github.com/tyrasd/osmtogeojson) library to convert the raw OSM data output it gets from the Overpass API to GeoJSON.
 
 ### TKGM
 
-Coğrafi bilgilere *Tapu ve Kadastro Genel Müdürlüğü*'nün hazırlamış olduğu [Parsel Sorgu](https://parselsorgu.tkgm.gov.tr/) sistemi ile de erişilebilir. [Postman]() kullanarak `tkgm_postman_collection.json` adındaki dosyayı içe aktardıktan sonra *il* > *ilçe* > *mahalle* hiyerarşisinde sorgu yapabilirsiniz. [Mahalle](geojsons/istanbul-neighbourhood-tkgm.geojson) bazındaki veriler eksik ve tatmin edici değil, ek olarak sorgu limiti oldukça düşük ama siz [ne](http://spys.me/proxy.txt) yapacağınızı biliyorsunuz.
+Coğrafi bilgilere *Tapu ve Kadastro Genel Müdürlüğü*'nün hazırlamış olduğu [Parsel Sorgu](https://parselsorgu.tkgm.gov.tr/) sistemi ile de erişilebilir. [Postman](https://www.postman.com/) kullanarak `tkgm_postman_collection.json` adındaki dosyayı içe aktardıktan sonra *il* > *ilçe* > *mahalle* hiyerarşisinde sorgu yapabilirsiniz. [Mahalle](geojsons/istanbul-neighbourhood-tkgm.geojson) bazındaki veriler eksik ve tatmin edici değil, ek olarak sorgu limiti oldukça düşük ama siz [ne](http://spys.me/proxy.txt) yapacağınızı biliyorsunuz.
 
 ### TOPOVT
 
@@ -60,12 +60,21 @@ Coğrafi bilgilere *Tapu ve Kadastro Genel Müdürlüğü*'nün hazırlamış ol
 
 Akışları kullanabilmek için [Pentaho PDI](https://sourceforge.net/projects/pentaho/files/Pentaho%209.0/) kurulmalı ve `pentaho-flows` klasöründeki `.ktr` uzantılı dosyalar kullanılmalıdır. Kurulum ve kullanımda sorun yaşamanız halinde mail atabilirsiniz. Oluşturulan akışların benzerleri herhangi bir **ETL** aracıyla rahatlıkla yapılabilir.
 
-* **`GeoJSON from TKGM.ktr`**: `tkgm_postman_collection.json` içindeki HTTP sorgularının otomatize edilmesi için hazırlanmış bir akıştır. İçinde İstanbulun il kodları kullanılarak TKGM API'a sorgu gönderilmiş ve sonuçları *geojson* olarak kaydedilmiştir.
+* **GeoJSON from TKGM.ktr**: `tkgm_postman_collection.json` içindeki HTTP sorgularının otomatize edilmesi için hazırlanmış bir akıştır. İçinde İstanbulun il kodları kullanılarak TKGM API'a sorgu gönderilmiş ve sonuçları *geojson* olarak kaydedilmiştir.
 
-* **`Remove Admin Center.ktr`**: geojson'larda bulunan merkez noktalarının temizlenmesi için oluşturulmuş bir akıştır. Farkları aşağıdaki liklere tıklanarak görüntülenebilir;
+* **Remove Admin Center.ktr**: `.geojson` dosyalarınlarda bulunan merkez noktalarının temizlenmesi için oluşturulmuş bir akıştır. Farkları aşağıdaki liklere tıklanarak görülebilir;
 
     * [Merkez noktası olan İstanbul mahalleleri](geojsons/istanbul-admin-level-8.geojson)
     * [Merkez noktaları temizlenmiş İstanbul mahalleleri](geojsons/istanbul-admin-level-8-without-centers.geojson)
 
 ## Bu veri ile ne yapılabilir?
 
+Bir yüksek lisans projesinde yaşadığım zorluktan dolayı bu kaynağı oluşturma ihtiyacı hissettim. Aşağıda veri görselleştirme ve analizi için bulduğum örnekleri sıralıyorum;
+
+* Bir `R` [kütüphanesi](https://www.r-graph-gallery.com/327-chloropleth-map-from-geojson-with-ggplot2.html) ile coğrafi koordinatlar kullanılarak ısı haritası çıkarılabilir.
+
+<center><img src="images/heatmap.png" width="500"></center>
+
+* [İstanbul Büyükşehir Belediyesi](https://data.ibb.gov.tr/)'nin sağlamış olduğu koordinatlar kullanılarak otobüs güzergahlarının haritası çıkarılabilir. [KeplerGL](https://kepler.gl/) kullanılarak yapılan projeye [buradan](https://medium.com/swlh/visualizing-istanbul-bus-traffic-with-python-and-keplergl-a84895788825) erişebilirsiniz.
+
+<center><img src="images/way.png" width="500"></center>
