@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "7ff8ed41-1fd8-42e3-873e-cfc8c90ad895",
+		"name": "GeoJSON",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin Level 6",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/javascript, */*; q=0.01"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36"
+					}
+				],
+				"url": {
+					"raw": "https://cbsservis.tkgm.gov.tr/megsiswebapi.v3/api//idariYapi/ilceListe/56",
+					"protocol": "https",
+					"host": [
+						"cbsservis",
+						"tkgm",
+						"gov",
+						"tr"
+					],
+					"path": [
+						"megsiswebapi.v3",
+						"api",
+						"",
+						"idariYapi",
+						"ilceListe",
+						"56"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Level 4",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/javascript, */*; q=0.01"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36"
+					}
+				],
+				"url": {
+					"raw": "https://cbsservis.tkgm.gov.tr/megsiswebapi.v3/api/idariYapi/ilListe",
+					"protocol": "https",
+					"host": [
+						"cbsservis",
+						"tkgm",
+						"gov",
+						"tr"
+					],
+					"path": [
+						"megsiswebapi.v3",
+						"api",
+						"idariYapi",
+						"ilListe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Level 8",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/javascript, */*; q=0.01"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36"
+					}
+				],
+				"url": {
+					"raw": "https://cbsservis.tkgm.gov.tr/megsiswebapi.v3/api/idariYapi/mahalleListe/504",
+					"protocol": "https",
+					"host": [
+						"cbsservis",
+						"tkgm",
+						"gov",
+						"tr"
+					],
+					"path": [
+						"megsiswebapi.v3",
+						"api",
+						"idariYapi",
+						"mahalleListe",
+						"504"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
