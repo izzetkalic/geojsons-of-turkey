@@ -706,7 +706,7 @@
     <defaultPathLeafToNull>Y</defaultPathLeafToNull>
     <rownum_field/>
     <file>
-      <name>${Internal.Entry.Current.Directory}/istanbul-admin-level-8.geojson</name>
+      <name>${Internal.Entry.Current.Directory}/istanbul-admin-level-6.geojson</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -902,7 +902,7 @@ var JsonOutput = JSON.stringify(json);</jsScript_script>
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>${Internal.Entry.Current.Directory}/istanbul-admin-level-8-without-centers</name>
+      <name>${Internal.Entry.Current.Directory}/istanbul-admin-level-6-without-centers</name>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
       <extention>geojson</extention>
