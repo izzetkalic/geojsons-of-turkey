@@ -48,6 +48,7 @@ According to [Overpass Turbo](https://wiki.openstreetmap.org/wiki/ES:Overpass_tu
 
 > Overpass turbo uses the [osmtogeojson](https://github.com/tyrasd/osmtogeojson) library to convert the raw OSM data output it gets from the Overpass API to GeoJSON.
 
+:collision: :collision: Due to bandwidth quota json files can be downloaded with [this](https://drive.google.com/drive/folders/1Fd8hz0rI7cVgAK31KXFAIUCujFGoxiyf?usp=sharing) link.
 ### TKGM (General Directorate of Land Registry and Cadastre)
 
 [Parsel Sorgu](https://parselsorgu.tkgm.gov.tr/) can be used to collect geographic coordinates. `tkgm_postman_collection.json` has been created to query this api. Import it into [Postman](https://www.postman.com/) and run it hierarchically. But [neighbourhood](geojsons/istanbul-neighbourhood-tkgm.geojson) level data is not as good as OpenStreetMap data and query limit is very low but you know the [trick](http://spys.me/proxy.txt).

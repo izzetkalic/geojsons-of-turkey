@@ -48,6 +48,7 @@ out geom;
 
 > Overpass turbo uses the [osmtogeojson](https://github.com/tyrasd/osmtogeojson) library to convert the raw OSM data output it gets from the Overpass API to GeoJSON.
 
+:collision: :collision: Bant genişliği kotasından dolayı JSON dosyaları [bu](https://drive.google.com/drive/folders/1Fd8hz0rI7cVgAK31KXFAIUCujFGoxiyf?usp=sharing) linkten indirilebilir.
 ### TKGM
 
 Coğrafi bilgilere *Tapu ve Kadastro Genel Müdürlüğü*'nün hazırlamış olduğu [Parsel Sorgu](https://parselsorgu.tkgm.gov.tr/) sistemi ile de erişilebilir. [Postman](https://www.postman.com/) kullanarak `tkgm_postman_collection.json` adındaki dosyayı içe aktardıktan sonra *il* > *ilçe* > *mahalle* hiyerarşisinde sorgu yapabilirsiniz. [Mahalle](geojsons/istanbul-neighbourhood-tkgm.geojson) bazındaki veriler eksik ve tatmin edici değil, ek olarak sorgu limiti oldukça düşük ama siz [ne](http://spys.me/proxy.txt) yapacağınızı biliyorsunuz.
